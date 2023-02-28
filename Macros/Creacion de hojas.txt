@@ -1,0 +1,39 @@
+Sub CrearCopiarPegarEliminarRenombrar()
+
+    'Desactivar actualizaciÃ³n de pantalla
+    Application.ScreenUpdating = False
+    
+    'Eliminar Hoja1
+    Sheets("Hoja1").Delete
+    
+    'Crear nuevas hojas
+    Sheets.Add(After:=Sheets(Sheets.Count)).Name = "Hoja3"
+    Sheets.Add(After:=Sheets(Sheets.Count)).Name = "Hoja4"
+    
+    'Copiar contenido de Hoja2 y pegarlo en las nuevas hojas
+    Sheets("Hoja2").Cells.Copy Destination:=Sheets("Hoja3").Range("A1")
+    Sheets("Hoja2").Cells.Copy Destination:=Sheets("Hoja4").Range("A1")
+    
+    'Eliminar Hoja2
+    Sheets("Hoja2").Delete
+
+    'Renombrar las nuevas hojas
+    Sheets("Hoja3").Name = "Hoja1"
+    Sheets("Hoja4").Name = "Hoja2"
+    
+    'Activar actualizaciÃ³n de pantalla
+    Application.ScreenUpdating = True
+    
+        
+    ThisWorkbook.Worksheets("Hoja2").Activate
+    ActiveWindow.DisplayGridlines = False
+    ActiveWindow.Zoom = 85
+    Range("A1").Select
+    
+    ThisWorkbook.Worksheets("Hoja1").Activate
+    ActiveWindow.DisplayGridlines = False
+    ActiveWindow.Zoom = 85
+    Range("A1").Select
+
+    
+End Sub

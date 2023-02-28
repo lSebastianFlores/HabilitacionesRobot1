@@ -1,0 +1,15 @@
+Sub DesplazarImagen()
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+   
+    ColWidth = Range("A1").EntireColumn.Width
+    ColWidth2 = Range("B1").EntireColumn.Width
+    TotalWidth = ColWidth + (ColWidth2 / 3)
+    RowHeight = Range("A1").EntireRow.Height
+    
+    ActiveSheet.Shapes.Range(Array("Picture 1")).Select
+    Selection.ShapeRange.IncrementLeft TotalWidth
+    Selection.ShapeRange.IncrementTop RowHeight
+    Range("A1").Select
+    
+End Sub

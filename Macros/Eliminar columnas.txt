@@ -1,0 +1,21 @@
+Sub EliminarColumnasPorSegundoValor()
+    Dim Hoja As Worksheet
+    Dim Rango As Range
+    Dim Columna As Range
+    Dim Valor As Variant
+    Dim i As Long
+    
+    Set Hoja = ActiveSheet
+    Set Rango = Hoja.UsedRange
+    
+    For i = Rango.Columns.Count To 1 Step -1
+        Set Columna = Rango.Columns(i)
+        Valor = Columna.Cells(2, 1).Value
+        If Valor = "N.A" Or Valor = "N.A." Or Valor = "" Then
+            Columna.EntireColumn.Delete
+        End If
+    Next i
+End Sub
+
+
+

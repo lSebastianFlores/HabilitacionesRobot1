@@ -1,0 +1,13 @@
+Sub LetrasNegrita()
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+
+    Dim UltimaFila As Long
+    UltimaFila = Cells(Rows.Count, "B").End(xlUp).Row
+
+    Range("C7:G" & UltimaFila).Select
+    
+    Selection.Font.Bold = True
+    Range("C7:G" & UltimaFila).HorizontalAlignment = xlCenter
+    
+End Sub

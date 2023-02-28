@@ -1,0 +1,15 @@
+Sub GenerarBordes()
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+
+    'Encuentra la ultima fila de la columna G
+    Dim UltimaFila As Long
+    UltimaFila = Cells(Rows.Count, "B").End(xlUp).Row
+    
+    'Selecciona el rango desde A8 hasta la ultima fila de la columna G
+    Range("A8:G" & UltimaFila).Select
+    
+    'Establece todos los bordes con grosor por defecto
+    Selection.Borders.Weight = xlThin
+    
+End Sub

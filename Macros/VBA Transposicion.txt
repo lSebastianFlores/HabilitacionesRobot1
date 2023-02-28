@@ -1,0 +1,13 @@
+Sub Transpose()
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+    Dim ultimaColumna As Range
+    Dim rangoCeldas As Range
+    Set ultimaColumna = Sheets("Hoja1").Cells(1, Columns.Count).End(xlToLeft)
+    Set rangoCeldas = Sheets("Hoja1").Range("B1:" & ultimaColumna.Address)
+    rangoCeldas.Select
+    Selection.Copy
+    Range("B9").Select
+    Selection.PasteSpecial Transpose:=True
+
+End Sub

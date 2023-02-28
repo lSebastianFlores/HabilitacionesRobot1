@@ -1,0 +1,9 @@
+Sub EliminarHoja()
+
+    Application.DisplayAlerts = False
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+
+    Worksheets("Hoja2").Delete
+
+End Sub

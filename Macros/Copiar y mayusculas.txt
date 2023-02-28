@@ -1,0 +1,18 @@
+Sub ConcatenarYMayusculas()
+
+    Dim rngCopiar As Range
+    Dim valorCelda As String
+    ThisWorkbook.Worksheets("Hoja1").Activate
+    Set rngCopiar = Range("A1:A2")
+    
+    rngCopiar.Copy Destination:=Range("A3")
+
+    valorCelda = UCase(Range("A4").Value)
+    Range("B8").Value = "LISTADO DE CURSOS PARA " & valorCelda
+
+    With Range("A3:A4").Borders
+        .LineStyle = xlContinuous
+        .Weight = xlThick
+    End With
+
+End Sub

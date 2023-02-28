@@ -1,0 +1,16 @@
+Sub GenerarSecuencia()
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+    Dim UltimaFila As Long
+    UltimaFila = Cells(Rows.Count, "B").End(xlUp).Row
+    
+    Range("A9").Value = 1
+    
+    Dim i As Long
+    For i = 10 To UltimaFila
+        Range("A" & i).Value = i - 8
+    Next i
+
+    Range("A9:A" & UltimaFila).HorizontalAlignment = xlCenter
+
+End Sub

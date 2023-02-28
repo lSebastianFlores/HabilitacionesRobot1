@@ -1,0 +1,15 @@
+Sub Detalles()
+
+    ThisWorkbook.Worksheets("Hoja1").Activate
+
+    ActiveWindow.Zoom = 85
+    Columns("A:A").EntireColumn.AutoFit
+    Columns("B:B").EntireColumn.AutoFit
+    Columns("C:C").EntireColumn.AutoFit
+    Columns("D:D").EntireColumn.AutoFit
+    Columns("E:E").EntireColumn.AutoFit
+    Columns("F:F").EntireColumn.AutoFit
+    Columns("G:G").EntireColumn.AutoFit
+    Range("C7").Select
+    
+End Sub
